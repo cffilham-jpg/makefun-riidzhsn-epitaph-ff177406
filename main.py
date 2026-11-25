@@ -32,6 +32,8 @@ def validate(path: Path) -> None:
         raise ValueError("line must be 1-150 chars")
     if "\n" in text or "\r" in text:
         raise ValueError("line must be a single line")
+    if not text.strip():
+        raise ValueError("line must not be only whitespace")
 
 
 def main() -> None:
